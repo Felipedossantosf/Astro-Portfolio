@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  // {
+  //   date: "Actualmente...",
+  //   title: "Estudiante Analista Programador − Universidad ORT",
+  //   description:
+  //     "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+  //   link: "https://fi.ort.edu.uy/analista-programador/plan-de-estudios",
+  // },
+  {
+    date: "October 2021 - January 2023",
+    title: "IT Technician & DevOps Jr.  − Urudata S.A.",
+    description:
+      "First ever experience at an IT company.I was part of the UPM IT team as a technician and worked in DevOps area. Performing tasks related to software maintenance and software deployment in cloud (Azure).",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

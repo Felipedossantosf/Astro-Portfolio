@@ -1,0 +1,51 @@
+---
+interface Props {
+	title: string;
+}
+
+// Supports weights 100-900
+import '@fontsource-variable/onest';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />		
+		<link rel="icon"  href="/linkedin_photo"/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<!-- <div class="absolute top-0  z-[-2] h-full w-full bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>  -->
+		<Header />
+		<slot />
+		<!-- <Footer /> -->
+	</body>
+</html>
+<style is:global>
+
+	:root{
+		/* color-scheme: light dark; */
+	}
+
+
+	html {
+		font-family: 'Onest Variable', sans-serif;
+		scroll-behavior: smooth;
+	}
+	
+	body{
+		display: flex;
+		/* background: #050505; */
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}	
+</style>

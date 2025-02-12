@@ -1,0 +1,84 @@
+---
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from "../components/icons/Linkedin.astro"
+import GitHubIcon from "../components/icons/GitHub.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import Briefcase from '../components/icons/Briefcase.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import About from '../components/icons/About.astro';
+---
+
+<Layout title="Felipe dos Santos | Portfolio.">
+	<main class="px-4"> 
+		<!-- <div class="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div> -->
+		<section id="sobre-mi" class=" w-full lg:w-[740px] mx-auto pb-16 pt-6 ">
+			<img 
+				class="rounded-full w-24 h-24 mb-3" 
+				src="../../public/linkedin_photo.jpg" 
+				alt="felipe photo"
+			>
+			<h1 class="text-slate-700 text-5xl font-bold flex pb-4">
+				Hey, I´m Felipe 
+				<a 
+				  href="https://www.linkedin.com/in/felipe-dos-santos-937861243/" 
+				  target="_blank" class="flex mx-3 my-auto"
+				>
+				  <Badge>Available for hire</Badge>
+				</a>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-slate-800">
+				Software developer based in Montevideo, Uruguay. Passionate about building scalable applications and APIs using technologies like React Js, .NET, SQL and Cloud. 
+			</h2>
+
+			<nav class="flex gap-4 mt-6 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/felipe-dos-santos-937861243/">
+				  <LinkedInIcon class="size-4 md:size-6 text-slate-800 opacity-80" />
+				   <p class="text-black">LinkedIn</p>
+				</SocialPill>
+				<SocialPill href="https://github.com/Felipedossantosf">
+				  <GitHubIcon class="size-4 md:size-6 text-slate-800 opacity-80" />
+				   <p class="text-black">GitHub</p>
+				</SocialPill>
+				<SocialPill href="mailto:fel.dossantosferraz@gmail.com">
+				  <MailIcon class="size-4 md:size-6 text-slate-800 opacity-80" />
+				   <p class="text-black">fel.dossantosferraz@gmail.com</p>
+				</SocialPill>
+			  </nav>
+		</section>
+
+		<section id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-slate-800">
+				<Briefcase class="size-7"/>
+				 <p>Work Experience</p>
+			</h2>
+			<Experience />
+		</section>
+
+		<section id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-slate-800">
+				<CodeIcon class="size-7" />
+				 Projects
+			  </h2>
+			  <Projects />
+		</section>
+
+		
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	
+</style>

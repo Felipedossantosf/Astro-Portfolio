@@ -1,0 +1,154 @@
+---
+ import NextJS from "./icons/NextJS.astro"
+ import Tailwind from './icons/Tailwind.astro'
+ import ReactJS from "./icons/ReactJS.astro"
+ import Redux from './icons/Redux.astro'
+ import Html from './icons/Html.astro'
+ import Css from './icons/Css.astro'
+ import Bootstrap from './icons/Bootstrap.astro'
+import Vercel from "./icons/Vercel.astro"
+import Azure from "./icons/Azure.astro"
+import Dotnet from "./icons/Dotnet.astro"
+import GitHub from "./icons/GitHub.astro"
+import Sql from "./icons/Sql.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  REACT:{
+    name:"React.js",
+    class: "bg-[#5468ff] text-white",
+    icon : ReactJS
+  },
+  REDUX:{
+    name: "Redux",
+    class:"bg-[#764abc] text-white",
+    icon: Redux
+  },
+  HTML:{
+    name: "Html",
+    class:"bg-[#ff6f3c] text-white",
+    icon: Html
+  },
+  CSS:{
+    name: "Css",
+    class:"bg-[#4495d4] text-white",
+    icon: Css
+  },
+  BOOTSTRAP:{
+    name: "Bootstrap",
+    class:"bg-[#764abc] text-white",
+    icon: Bootstrap
+  },
+  VERCEL:{
+    name: "Vercel",
+    class:"bg-gray-300 text-white",
+    icon: Vercel
+  },
+  AZURE:{
+    name: "Azure",
+    class:"bg-blue-200 text-white",
+    icon: Azure
+  }
+  ,
+  DOTNET:{
+    name: ".NET",
+    class:"bg-indigo-300 text-white",
+    icon: Dotnet
+  },
+  GITHUB:{
+    name: "Github",
+    class:"bg-black text-white",
+    icon: GitHub
+  },
+  SQL:{
+    name: "SQL",
+    class:"bg-gray-400 text-white",
+    icon: Sql
+  }
+}
+const PROJECTS = [
+  {
+    title: "Census App - Web application to census people",
+    description:
+      "Project developed using React js, Redux, Axios and Tailwind CSS. App that allows to census people.",
+    link: "https://census-app-mu.vercel.app/", 
+    github: "https://github.com/Felipedossantosf/census_app",
+    image: "/public/web-censo.PNG",
+    tags: [TAGS.REACT,TAGS.REDUX, TAGS.TAILWIND, TAGS.VERCEL],
+  },
+  {
+    title: "StarCRM - A crm for freight transport logistics companies",
+    description:
+      "Created from scratch using React js, Redux, React Router Tailwind CSS. App that allows to manage customers relationship. Deployed to Azure Static Web Apps service using Github Actions as CI/CD tool.",
+    link: "no link", 
+    github: "https://github.com/Felipedossantosf/StarCRM-frontend",
+    image: "/public/starcrm-front.PNG",
+    tags: [TAGS.REACT,TAGS.REDUX, TAGS.TAILWIND,TAGS.GITHUB, TAGS.AZURE],
+  },
+  {
+    title: "StarCRM - API",
+    description:
+      "API developed using .NET, Entity Framework, LINQ, SQL Server. Deployed to Azure App Service using Github Actions as CI/CD tool.",
+    link: "no link", 
+    github: "https://github.com/Felipedossantosf/StarCRM-backend/tree/develop",
+    image: "/public/starcrm-api.PNG",
+    tags: [TAGS.DOTNET,TAGS.SQL, TAGS.GITHUB, TAGS.AZURE],
+  },
+  {
+    title: "Ice Cream Shop - Local business website",
+    description:
+      "Created from scratch using HTML, CSS and Bootstrap. Website for local Ice Cream Shop business (academic purposes).",
+    link: "https://felipedossantosf.github.io/IceCreamShop/", 
+    github: "https://github.com/Felipedossantosf/IceCreamShop",
+    image: "/public/web-heladeria.PNG",
+    tags: [TAGS.HTML,TAGS.CSS, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "Ray-Ban Shop - Sunglasses business website",
+    description:
+      "Created from scratch using HTML, CSS and Bootstrap. Landing page for sunglasses business (academic purposes).",
+    link: "https://felipedossantosf.github.io/rayban-website-bootstrap.github.io/", 
+    github: "https://github.com/Felipedossantosf/rayban-website-bootstrap.github.io",
+    image: "/public/web-rayban.PNG",
+    tags: [TAGS.HTML,TAGS.CSS, TAGS.BOOTSTRAP],
+  }
+]
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags, github }) => (
+    <article class="m-5 mb-16">
+      <h3 class="text-2xl font-extrabold text-yellow-300 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty text-slate-600">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <a href={github} target="_blank">
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+      </a>
+    </article>
+  ))
+}
